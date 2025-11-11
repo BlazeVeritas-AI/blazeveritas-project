@@ -142,7 +142,7 @@ Utilities	NumPy, Pandas, Requests, dotenv
 
 
 # 1️⃣ Clone the repository
-git clone https://github.com/<your-username>/BlazeVeritas-AI.git
+git clone https://github.com/BlazeVeritas-AI/blazeveritas-project.git
 cd BlazeVeritas-AI
 
 # 2️⃣ Create and activate environment
