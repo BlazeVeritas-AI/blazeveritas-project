@@ -1,4 +1,4 @@
-🔥 BlazeVeritas AI — AI-Powered Wildfire Intelligence System
+🔥 **BlazeVeritas AI — AI-Powered Wildfire Intelligence System**
 
 End-to-End Intelligent Platform for Wildfire Detection, Explainability & Response Planning
 
@@ -7,7 +7,7 @@ It integrates computer vision, geospatial analytics, and conversational intellig
 
 ![alt text]({30AED459-CAB8-4535-87E0-60A4F2D06AD2}.png)
 
-🌍 Overview
+🌍 **Overview**
 
 Wildfires pose catastrophic threats to ecosystems, infrastructure, and human lives.
 BlazeVeritas AI bridges science and technology to deliver:
@@ -25,30 +25,48 @@ BlazeVeritas AI bridges science and technology to deliver:
 ⚙️ System Architecture
 
 Streamlit UI (app.py)
+
 │
 ├── Detect tab → CNN/ResNet/DenseNet models for fire classification
+
 ├── Calibration tab → Reliability plots & temperature scaling
+
 ├── Copilot tab → RAG assistant with OpenAI + LangChain
+
 └── Map tab → Geo-aware visualization
 
 Backend (FastAPI / LangChain)
 
 api/
+
 ├── inference.py     → Model loading & prediction
+
 ├── explain.py       → Grad-CAM generation
+
 ├── rag/
+
 │   ├── index.py     → Vector-DB building (Chroma)
+
 │   └── retrieve.py  → RAG plan generation with OpenAI
+
 ├── settings.py      → Environment configs
+
 └── main.py          → API endpoints
 
 Core Modules
+
 Module	Description
+
 api/inference.py	Loads trained CNN/ResNet/DenseNet models and performs prediction with temperature scaling
+
 api/explain.py	Generates Grad-CAM heatmaps for visual explainability
+
 api/rag/retrieve.py	LangChain + OpenAI Copilot for contextual wildfire action planning
+
 app/app.py	Streamlit dashboard integrating all components
+
 scripts/ingest_docs.py	Indexes documents into Chroma vector store for RAG retrieval
+
 models/	Trained model weights (.pt / .ckpt) for all backbones
 
 Models & Explainability
@@ -148,13 +166,21 @@ streamlit run app.py
 
 📁 Folder Structure
 blazeveritas/
+
 ├── api/                     # FastAPI backend (inference + RAG)
+
 ├── app/                     # Streamlit dashboard
+
 ├── models/                  # Trained model weights
+
 ├── reports/                 # Grad-CAM & metric outputs
+
 ├── scripts/                 # Utilities for ingestion & ONNX export
+
 ├── data/                    # Input / sample data
+
 ├── .env                     # API keys & configs
+
 └── app.py                   # Dashboard entry point
 
 
@@ -188,7 +214,8 @@ Deployment Plan
 
 👩‍💻 Authors & Responsibilities
 
-Dilrabo Khidirova
+**Dilrabo Khidirova**
+
 Role: AI Engineer | MSc in Machine Learning & Data Science
 Responsibilities:
 
@@ -202,18 +229,23 @@ Led dataset preprocessing, model calibration, and FastAPI backend development.
 
 Authored project documentation and technical report for EPAM Internship.
 
-Anna Surkova
+**Anna Surkova**
+
 Role: Project Manager | Data Engineering & AI
 Responsibilities:
 
 Coordinated the project roadmap and milestone delivery.
+
 Managed data engineering workflows and validation pipelines.
+
 Oversaw testing, documentation, and deployment strategy.
+
 Supported integration between AI models and front-end dashboard.
+
 Provided strategic guidance on AI ethics and reliability assessment.
 
 
-Acknowledgments
+**Acknowledgments**
 
 EPAM Systems Mentorship (2025) — Internship project under Taras Ustyianovych & Yulyana Huliayeva
 
