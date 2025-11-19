@@ -1,3 +1,7 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 from pathlib import Path
 from typing import Dict, Any, List
 
@@ -7,6 +11,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 
 import os
+
 
 CHROMA_DIR = Path(".chroma")
 CHROMA_DIR.mkdir(exist_ok=True)
