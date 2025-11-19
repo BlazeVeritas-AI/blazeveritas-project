@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     MET_DIR: Path = REPORTS_DIR / "metrics"
 
     MODEL_WEIGHTS: str = "resnet18_fire_nofire_calibrated.ckpt"
-    DEVICE: str = "cuda"
+    DEVICE: str = "cpu"
     IMG_SIZE: int = 224
     TEMP_INIT: float = 1.0
 
