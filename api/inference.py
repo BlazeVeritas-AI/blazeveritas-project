@@ -37,8 +37,8 @@ class ResNet18Fire(nn.Module):
         return self.backbone(x)
 
 class InferenceEngine:
-    def __init__(self):
-        self.device = torch.device(settings.DEVICE if torch.cuda.is_available() else "cpu")
+    def __init__(self):        
+        self.device = torch.device("cpu")
         self.model = ResNet18Fire().to(self.device)
 
         weights_path = settings.MODELS_DIR / settings.MODEL_WEIGHTS
