@@ -1,3 +1,7 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 from typing import Dict, Any, List, Tuple
 import os
 
@@ -11,6 +15,7 @@ from langchain_community.retrievers import BM25Retriever
 from langchain.retrievers import EnsembleRetriever
 
 from .index import get_vectordb
+
 
 SYSTEM_PROMPT = """
 You are **BlazeVeritas Wildfire  Copilot** — a disciplined incident support assistant.
