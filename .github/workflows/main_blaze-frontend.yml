@@ -1,0 +1,40 @@
+name: Deploy Streamlit to Azure Web App (blaze-frontend)
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: [ "app.py", "requirements-fe.txt" ]
+  workflow_dispatch:
+
+env:
+  AZURE_WEBAPP_NAME: blaze-frontend
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Zip app
+        run: |
+          mv requirements-fe.txt requirements.txt
+          zip -r app_fe.zip app.py requirements.txt
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          package: app.zip
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_FE }}
