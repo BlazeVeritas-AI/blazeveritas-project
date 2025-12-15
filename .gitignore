@@ -44,14 +44,6 @@ app/app_secrets.toml
 *.key
 *.pem
 
-# Model weights & large artifacts
-
-models/**/*.pt
-models/**/*.pth
-models/**/*.ckpt
-models/**/*.onnx
-models/**/*.safetensors
--
 # Data & generated outputs
 
 data/
